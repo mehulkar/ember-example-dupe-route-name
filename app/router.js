@@ -7,6 +7,10 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+
+  // Last one defined wins, for transitionTo. Doesn't seem to matter for visit()
+  this.route('foo', { path:  '/foo/:id' });
+  this.route('foo', { path:  '/foo/:title/:id' });
 });
 
 export default Router;

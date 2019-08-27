@@ -1,5 +1,32 @@
-{{!-- The following component displays Ember's default welcome message. --}}
-<WelcomePage />
-{{!-- Feel free to remove this! --}}
+<section>
+  <p>
+    See test cases.
+  </p>
+</section>
 
-{{outlet}}
+<hr>
+
+<nav>
+  <li>
+    <button data-test-transition-with-title {{on "click" (action this.transitionRouteWithTitle)}}>click</button>
+    <span>router.transitionTo('foo', 'bar', '1');</span>
+  </li>
+  <li>
+    <button data-test-transition-without-title {{on "click" (action this.transitionRouteWithoutTitle)}}>click</button>
+    <span class="red">router.transitionTo('foo', '2');</span>
+  </li>
+  <li>
+    <button data-test-visit-with-title {{on "click" (action this.visitRouteWithTitle)}}>click</button>
+    <span>getOwner(this).visit('/foo/bar/3');</span>
+  </li>
+  <li>
+    <button data-test-visit-without-title {{on "click" (action this.visitRouteWithoutTitle)}}>click</button>
+    <span>getOwner(this).visit('/foo/4');</span>
+  </li>
+</nav>
+
+<hr>
+
+<main>
+  {{outlet}}
+</main>
